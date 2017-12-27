@@ -1,0 +1,58 @@
+root = true
+
+[*]
+# ------
+# 通用配置
+# ------
+
+# 缩进类型
+indent_style = space
+# 缩进大小
+indent_size = 2
+# tab 宽度
+tab_width = 2
+# 行结束符
+end_of_line = lf
+# 编码类型
+charset = utf-8
+# 是否自动删除行末空格
+trim_trailing_whitespace = true
+# 是否在文件末尾自动空行
+insert_final_newline = true
+# 每行最大字符数
+# 支持范围：Emacs/Vim/Atom/ReSharper and Rider/etc.
+max_line_length = 80
+
+# ------
+# 以下不一定为 editorconfig 支持
+# ------
+
+# 字符串引号类型
+quote_type = single
+# 当前括号自动换行
+curly_bracket_next_line = true
+# 操作符自动空格
+spaces_around_operators = true
+# 括号内自动空格
+spaces_around_brackets = inside
+# 代码段缩进样式
+indent_brace_style = K&R
+# 一个语句拆成多行时锁进
+continuation_indent_size = 2
+
+[{*.yml, .eslintrc, .babelrc, package.json}]
+indent_style = space
+indent_size = 2
+
+[*.js]
+line_comment = '//'
+block_comment_start = '/*'
+block_comment_end = '*/'
+
+[*.jsx]
+line_comment = '//'
+block_comment_start = '{*'
+block_comment_end = '*}'
+
+[*.py]
+line_comment = '#'
