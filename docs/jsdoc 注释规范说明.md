@@ -7,7 +7,7 @@
 ```
 // @ts-check
 let a = 1; // a被定为为number类型
-a = {}; // a的类型被改变，当行讲报错
+a = {}; // a的类型被改变，当行将报错
 ```
 
 #### 不足
@@ -193,7 +193,7 @@ export function bankCardNo(val = '') {
 ```
 jsdoc <dir> -c /path/conf.json -r
 -d <dir> --package <dir> --readme <dir>
-<dir> 指定需要生成文档的目录 
+<dir> 指定需要生成文档的目录
 -r 递归目录
 -d 指定生成文档的目录的文件
 -c 指定配置文件
@@ -206,4 +206,8 @@ jsdoc <dir> -c /path/conf.json -r
 - editorconfig
 
 ### 问题
-- .js文件的装饰支持有问题
+- `.js`文件的装饰支持有问题
+```
+// 错误提示
+Stage 2 decorators may only be used with a class or a class method
+```
