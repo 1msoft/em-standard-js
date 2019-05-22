@@ -171,7 +171,7 @@ commitizen init cz-conventional-changelog-emsoft --save --save-exact
 
 #### 使用
 
-`git commit`时，不使用 `git commit`， 改为 `git gz`，根据提示进行
+`git commit`时，不使用 `git commit`， 改为 `git cz`，根据提示进行
 
 ### commitlint
 
