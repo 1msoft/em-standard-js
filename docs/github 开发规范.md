@@ -88,7 +88,7 @@ ps: 打开`git push`后的`remote`中的地址,可以快速提交`PR`
 
 - 新建缺陷
 
-```
+```text
 【菜单名称】任务描述                         发现版本   严重程度    优先级   状态    处理人
 
 例： 【申报申请】【项目申请】申请表单下拉框问题   v1.0.0   一般         中     待解决   王小明
@@ -123,19 +123,19 @@ ps: 打开`git push`后的`remote`中的地址,可以快速提交`PR`
 
 ### 从远程拉取所有信息
 
-```
+```shell
 git fetch origin --prune
 ```
 
 ### 更新 changelog，更新版本号
 
-```
+```shell
 npm run release -- --release-as [版本号]
 ```
 
 ### 推送至 github
 
-```
+```shell
 git push --follow-tags origin [远端分支]
 ```
 
@@ -159,13 +159,13 @@ git push --follow-tags origin [远端分支]
 
 1. 全局安装
 
-```
+```shell
 npm install -g commitizen
 ```
 
 2. 在项目根目录进行初始化配置
 
-```
+```shell
 commitizen init cz-conventional-changelog-emsoft --save --save-exact
 ```
 
@@ -185,14 +185,14 @@ git commit 格式规范化自动检查
 
 1. 安装 commitlint 和 husky
 
-```
+```shell
 npm i --save-dev @commitlint/{config-conventional,cli}
 npm i --save-dev husky
 ```
 
 2. 在项目 package.json 中添加 commit hooks
 
-```
+```json
 {
   "husky": {
     "hooks": {
@@ -216,13 +216,13 @@ npm i --save-dev husky
 
 1. 安装 stanndard-version
 
-```
+```shell
 npm i --save-dev standard-version
 ```
 
 2. 在项目`package.json`中添加 npm script 命令
 
-```
+```json
 {
   "scripts": {
     "release": "standard-version"
@@ -232,6 +232,6 @@ npm i --save-dev standard-version
 
 #### 使用
 
-```
+```bash
 npm run release -- --release-as [版本号]
 ```
