@@ -48,8 +48,9 @@
 3. 修改范围简单描述
 ![修改范围简单说明](https://ws1.sinaimg.cn/large/005zMGWfly1g1yhqbrb2qj30n201k0so.jpg)
 
-4. 拷贝`TAPD`任务卡片中的源码提交关键字
-![源码提交关键字](https://ws1.sinaimg.cn/large/005zMGWfly1g1yht9lrkaj3104014t8z.jpg)
+4. 进入`TAPD`任务卡片详情中，点击右上角 复制标题与链接
+
+![标题与链接](http://ww1.sinaimg.cn/large/c0bd45d4gy1gcvxvlm4qsj207w05fdfu.jpg)
 
 5. 多次回车至`git cz`完成本次`commit`
 
