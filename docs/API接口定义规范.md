@@ -32,7 +32,6 @@
 
 - 请采用小骆驼拼写法【lowerCamelCase】
 
-
 ### 数据类型
 
 >  由于JSON对象来自于JavaScript语言，所以字段命名遵循JavaScript语言。前后端交互时，需要考虑JS语言的数值精确度。
@@ -70,6 +69,11 @@
     "message":"OK!",
     "data": object | array, 
     "errors": string | object,
+  	"pageInfo":{
+      pageSize,
+      pageIndex,
+      total,
+    }
 }
 
 ```
@@ -96,6 +100,14 @@
 ### errors
 
 存放错误详情，无错误时为空。
+
+### pageInfo
+
+分页信息
+
+- pageSize：分页步幅
+- pageIndex：当前起始序号
+- total：数目总量
 
 
 
