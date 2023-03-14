@@ -128,7 +128,7 @@ ps: 打开`git push`后的`remote`中的地址,可以快速提交`PR`
   - 第2位 —— 系统更新功能等发生迭代后增加1
   - 第3位 —— 新版本发布后，存在需要修改的BUG或完善的地方
 
-### 具体步骤：
+### 发布版本：
 
 1. 在项目根目录下安装【release】与【stanndard-version】
 
@@ -142,9 +142,7 @@ npm i --save-dev release
 
 
 
-2. 发布版本
-
-在项目`package.json`中添加 npm script 命令
+2. 在项目`package.json`中添加 npm script 命令
 
 ```
 {
@@ -154,7 +152,7 @@ npm i --save-dev release
 }
 ```
 
-3. 使用
+3. 使用发布命令
 
 ```
 npm run release -- --release-as [版本号]
@@ -184,20 +182,14 @@ git push --follow-tags origin dev
 
 ![](./images/step1.png)
 
-
-
 - 进入已推送至远程的tag
 
 ![](./images/step2.png)
 
-
-
-- 点击【Create release from tag】![](./images/step3.png)
-
-
+- 点击【Create release from tag】
+![](./images/step3.png)
 
 - 填写相关信息后点击【Public release】即完成tag发布
-
 
 
 ## 所需工具
