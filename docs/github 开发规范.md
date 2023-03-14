@@ -63,7 +63,7 @@
 ps: 打开`git push`后的`remote`中的地址,可以快速提交`PR`
 ![快速提交PR](https://ws1.sinaimg.cn/large/005zMGWfly1g1ynomv783j30s50613zt.jpg)
 
-## 禅道工作流
+## jira工作流
 
 ### 任务看板
 
@@ -109,9 +109,10 @@ ps: 打开`git push`后的`remote`中的地址,可以快速提交`PR`
 
 ### 版本发布需符合的前提条件
 
-1. 版本对应 禅道 迭代中的所有需求状态为`已完成` 或 `已关闭`
-2. 版本对应 禅道 迭代中的所有缺陷状态为`已关闭`
+1. 版本对应 jira 迭代中的所有需求状态为`已完成` 或 `已关闭`
+2. 版本对应 jira 迭代中的所有缺陷状态为`已关闭`
 3. 版本对应 github 中的所有 pull request 均已合并
+4. 需在项目发布分支上进行推送，请当前确认代码为最新，并且目前在发布分支下
 
 ### 版本发布流程
 
@@ -120,23 +121,84 @@ ps: 打开`git push`后的`remote`中的地址,可以快速提交`PR`
 1. 确认脚本是否齐全
 2. 版本升级说明是否齐全
 
-### 从远程拉取所有信息
+### 版本号规则：
 
-```shell
-git fetch origin --prune
+- 版本号分为3位，格式为x.x.x，如1.0.0，若需要在头部增加v标识，则为：v1.0.0
+  - 第1位 —— 系统经过大改版时使用或修改，比如从1.x.x => 2.x.x
+  - 第2位 —— 系统更新功能等发生迭代后增加1
+  - 第3位 —— 新版本发布后，存在需要修改的BUG或完善的地方
+
+### 具体步骤：
+
+1. 在项目根目录下安装【release】与【stanndard-version】
+
+```
+npm i --save-dev standard-version
 ```
 
-### 更新 changelog，更新版本号
+```
+npm i --save-dev release
+```
 
-```shell
+
+
+2. 发布版本
+
+在项目`package.json`中添加 npm script 命令
+
+```
+{
+ "scripts": {
+   "release": "standard-version"
+ }
+}
+```
+
+3. 使用
+
+```
 npm run release -- --release-as [版本号]
 ```
 
-### 推送至 github
+示例
 
-```shell
-git push --follow-tags origin [远端分支]
 ```
+npm run release -- --release-as 1.2.1
+```
+
+4. 将升级提交和生成的新版本 tag，一同推至 Github
+
+```
+git push --follow-tags origin [远端分支] 
+```
+
+示例
+
+```
+git push --follow-tags origin dev
+```
+
+5. GitHub发布
+
+- 在Github仓库内进入【tags】找到发布的对应版本
+
+![](./images/step1.png)
+
+
+
+- 进入已推送至远程的tag
+
+![](./images/step2.png)
+
+
+
+- 点击【Create release from tag】![](./images/step3.png)
+
+
+
+- 填写相关信息后点击【Public release】即完成tag发布
+
+
 
 ## 所需工具
 
